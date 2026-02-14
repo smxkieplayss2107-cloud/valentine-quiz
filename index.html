@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Valentine Quiz 💘</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Floating hearts background -->
+  <div id="hearts-layer" aria-hidden="true"></div>
+
+  <main class="app" role="main">
+    <section class="card" id="screen-landing" data-screen="landing">
+      <div class="title-row">
+        <h1 class="title">Valentine Quiz <span class="pulse-heart">💘</span></h1>
+      </div>
+      <p class="subtitle">Answer these… and prepare for extreme cuteness 😌</p>
+      <div class="big-heart" aria-hidden="true">💗</div>
+      <button class="btn primary" id="startBtn">Start 💖</button>
+      <p class="tiny">Warning: this website is 99% love, 1% chaos.</p>
+    </section>
+
+    <section class="card hidden" id="screen-quiz" data-screen="quiz" aria-live="polite">
+      <div class="topbar">
+        <div class="progress-wrap" aria-label="Quiz progress">
+          <div class="progress-text" id="progressText">Question 1/5</div>
+          <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="5" aria-valuenow="1">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="qcard pop-in" id="qcard">
+        <h2 class="question" id="questionText">Question text</h2>
+        <div class="options" id="optionsWrap"></div>
+        <p class="helper" id="helperText"></p>
+
+        <div class="actions">
+          <button class="btn ghost" id="backBtn" type="button">Back</button>
+          <button class="btn primary" id="nextBtn" type="button" disabled>Next ✨</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="card hidden" id="screen-results" data-screen="results" aria-live="polite">
+      <h2 class="title2">Results Time 💌</h2>
+      <p class="subtitle2" id="resultsLine">Calculating score...</p>
+
+      <div class="scoreBox" aria-label="Score">
+        <div class="scoreLabel">Final Score</div>
+        <div class="scoreValue"><span id="scoreNow">0</span>/5</div>
+      </div>
+
+      <div class="banner hidden" id="loveBonusBanner">LOVE BONUS ACTIVATED 💞</div>
+
+      <button class="btn primary" id="toValentineBtn" disabled>Continue 💗</button>
+      <p class="tiny">Even if you got something wrong… the code says you’re perfect 😤</p>
+
+      <canvas id="confettiCanvas" class="confetti" aria-hidden="true"></canvas>
+    </section>
+
+    <section class="card hidden" id="screen-valentine" data-screen="valentine" aria-live="polite">
+      <h2 class="valTitle">Will you be my valentine? 🌹</h2>
+      <p class="valMsg" id="valMsg">Be honest… but also choose “Yes” 😌</p>
+
+      <div class="valBtns" id="valBtns">
+        <button class="btn primary yes" id="yesBtn">Yes 💘</button>
+        <button class="btn danger no" id="noBtn">No 🙈</button>
+      </div>
+
+      <div class="tiny">If you press “No”, the website will cry.</div>
+    </section>
+
+    <section class="card hidden" id="screen-celebrate" data-screen="celebrate" aria-live="polite">
+      <h2 class="title2">YAYYYYY 💞</h2>
+      <p class="subtitle2">You just made my whole day 🥺👉👈</p>
+      <div class="celebrateHeart" aria-hidden="true">💖</div>
+      <button class="btn primary" id="restartBtn">Restart 🔁</button>
+      <canvas id="confettiCanvas2" class="confetti" aria-hidden="true"></canvas>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
